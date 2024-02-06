@@ -9,3 +9,6 @@ Organic solvents - water partition coefficients are amongst the most meaningful 
 
 ### Goal
 The purpose of this project is to employ different machine learning methods, such as: **Linear Regression**, **Random Forest** and **Neural Network** to **predict** the value of octanol-water partition coefficient (**logP**) based on a restricted number of topological descriptors. The models will be also compared.
+
+### Workflow, libraries & packages
+![workflow]([https://github.com/awandzilak/OvarianTissues/blob/main/cases_distribution.jpg](https://github.com/awandzilak/LogPPrediction/blob/main/images/workflow.png)https://github.com/awandzilak/LogPPrediction/blob/main/images/workflow.png)
