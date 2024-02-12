@@ -14,10 +14,10 @@ The purpose of this project is to employ different machine learning methods, suc
 ![workflow](https://github.com/awandzilak/LogPPrediction/blob/main/images/workflow.png)
 
 ### Data [_(scraping.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/scraping.ipynb)
-Data were sourced from the ZINC20 database (https://zinc20.docking.org/, _Irwin, Tang, Young, Dandarchuluun, Wong, Khurelbaatar, Moroz, Mayfield, Sayle, J. Chem. Inf. Model 2020, https://pubs.acs.org/doi/10.1021/acs.jcim.0c00675._). The information was extracted using the BeautifulSoup library and stored in an SQLite database, primarily comprising mostly topological parameters. Additional descriptors were generated based on Simplified Molecular Input Line Entry Specification (SMILES) strings of molecules, which contain information on atom connectivity, atomic numbers, and charge. RDKit package was employed for this purpose.
+Data were sourced from the ZINC20 database (https://zinc20.docking.org/). The information was extracted using the BeautifulSoup library and stored in an SQLite database, primarily comprising mostly topological parameters. Additional descriptors were generated based on Simplified Molecular Input Line Entry Specification (SMILES) strings of molecules, which contain information on atom connectivity, atomic numbers, and charge. RDKit package was employed for this purpose.
 
 ### Data cleaning [_(clean.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/clean.ipynb)
-Data related to approximately 100,000 molecules was collected. A thorough examination was conducted to identify missing data. They  were checked for missing data, and in cases of data registered at a pH different from the reference over 95 % of data was missing, so these entries were eliminated.  Furthermore, entries containing properties recorded at the reference pH, with approximately 60% missing data for multiple features simultaneously, were also removed. In situations where disparities existed between data obtained directly from the database and data generated with RDKit, preference was given to values that provided a more accurate description of the molecules, and these values were retained. 
+Approximately 100,000 molecules' data were collected and thoroughly examined for missing values. Entries recorded at a pH other than the reference (7.0) were removed due to over 95% missing data. Additionally, those with about 60% missing data for multiple features simultaneously at the reference pH were also removed. Discrepancies between database and RDKit-generated descriptors were resolved by retaining the more accurate values for molecular descriptions.
 
 ### Exploratory data analysis [_(EDA.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/EDA.ipynb)
 This section employs data visualization techniques and includes:
@@ -25,3 +25,13 @@ This section employs data visualization techniques and includes:
 *  **Variable-to-target correlation:** Examining the relationship between variables and LogP.
 *  **Descriptor correlations:**  Investigating correlations among various descriptors.
 *  **Feature engineering:** In this phase, a set of new features was created, taking inspiration from the relationships observed in the Exploratory Data Analysis (EDA). These new features include polynomial features, rational difference features, and power-transformed features.
+
+### Predictions
+* Predictions of LogP values were generated using three algorithms: 
+  *  Linear Regression [_(Linear Regression.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/LinearRegression.ipynb))
+  *  Random Forest
+  *  Neural Network [_(Neural Network.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/NeuralNetwork.ipynb))
+
+*  The impact of including polynomial, rational difference, and power-transformed features on each model's performance was investigated.
+*  To combat overfitting in MLP models, regularization techniques were employed.
+*  Additionally, to manage the increased number of features resulting from feature engineering, Principal Component Analysis (PCA) and feature selection were utilized to improve the models' generalization performance.
