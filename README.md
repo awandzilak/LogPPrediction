@@ -28,10 +28,25 @@ This section employs data visualization techniques and includes:
 
 ### Predictions
 * Predictions of LogP values were generated using three algorithms: 
-  *  Linear Regression [_(Linear Regression.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/LinearRegression.ipynb))
+  *  Linear Regression [_(Linear Regression.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/LinearRegression.ipynb)
   *  Random Forest
-  *  Neural Network [_(Neural Network.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/NeuralNetwork.ipynb))
+  *  Neural Network [_(Neural Network.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/NeuralNetwork.ipynb)
 
 *  The impact of including polynomial, rational difference, and power-transformed features on each model's performance was investigated.
 *  To combat overfitting in MLP models, regularization techniques were employed.
 *  Additionally, to manage the increased number of features resulting from feature engineering, Principal Component Analysis (PCA) and feature selection were utilized to improve the models' generalization performance.
+
+### Summary
+Below, a comparative analysis of the performance of all evaluated models—linear regression, random forest, and neural network — alongside an exploration of the impact of engineered features, is presented.
+
+![comparison](https://github.com/awandzilak/LogPPrediction/blob/main/images/comparison_plots.png)
+In Figure 1, for the training set, the observations are as follows:
+* The linear regression model exhibited inferior performance on the training data but showed the most improvement with the inclusion of engineered features.
+* The neural network model performed well on the training data and experienced a slight improvement from the engineered features.
+* Random forest surpassed all models on the training data, achieving nearly perfect performance.
+
+
+In Figure 2, for the test set, the observations are as follows:
+* Neural network exhibited the best generalization across all datasets, with random forest scoring slightly lower.
+* Linear regression showed significant improvement due to the engineered features. Although neural network performance also saw a slight increase with the incorporation of features, it was less impacted compared to the linear model.
+* The performance of random forest remained largely unaffected after the inclusion of engineered features.
