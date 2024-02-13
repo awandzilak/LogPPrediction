@@ -1,7 +1,3 @@
-```diff
-- WORK IN PROGRESS -
-```
-
 ## Prediction of octanol-water partition coefficient of small drug-like molecules based on topological descriptors
 
 ### Background
@@ -29,14 +25,14 @@ This section employs data visualization techniques and includes:
 ### Predictions
 * Predictions of LogP values were generated using three algorithms: 
   *  Linear Regression [_(Linear Regression.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/LinearRegression.ipynb)
-  *  Random Forest
+  *  Random Forest [_(Random Forest.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/RandomForest.ipynb)
   *  Neural Network [_(Neural Network.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/NeuralNetwork.ipynb)
 
 *  The impact of including polynomial, rational difference, and power-transformed features on each model's performance was investigated.
 *  To combat overfitting in MLP models, regularization techniques were employed.
 *  Additionally, to manage the increased number of features resulting from feature engineering, Principal Component Analysis (PCA) and feature selection were utilized to improve the models' generalization performance.
 
-### Summary
+### Summary  [_(Summary.ipynb)_](https://github.com/awandzilak/LogPPrediction/blob/main/Summary.ipynb)
 Below, a comparative analysis of the performance of all evaluated models—linear regression, random forest, and neural network — alongside an exploration of the impact of engineered features, is presented.
 
 ![comparison](https://github.com/awandzilak/LogPPrediction/blob/main/images/comparison_plots.png)
