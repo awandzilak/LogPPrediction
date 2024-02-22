@@ -1,0 +1,5 @@
+scripts/.ipynb_checkpoints/
+__pycache__
+data/datasets/train.csv # big file. can be obtained directly from database
+data/datasets/test.csv # big file. can be obtained directly from database
+models/ # too big files
